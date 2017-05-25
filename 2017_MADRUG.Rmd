@@ -1,0 +1,105 @@
+---
+title: "3R: Entornos de desarrollo reproducibles para R con Docker"
+author: "Jose Manuel Vera Oteo"
+date: "25 de mayo de 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## La vida diaria de un usuario de R
+
+- **"Nuevo proyecto: voy instalando paquetes según voy necesitando."**
+
+
+## La vida diaria de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- **"No recuerdo cómo instalé aquella librería que necesito para este paquete."**
+
+## La vida diaria de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
+- **"En windows el proceso es muy complicado (o no funciona)."**
+
+## La vida diaria de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
+- "En windows el proceso es muy complicado (o no funciona)."
+- **"¿Pasarlo a producción?. Claro. Muy fácil......."**
+
+## La vida diaria de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
+- "En windows el proceso es muy complicado (o no funciona)."
+- "¿Pasarlo a producción?. Claro. Muy fácil......."
+- **"Feliz con PC nuevo hasta que piensas que tienes que reinstalar y configurar todo."**
+
+## La vida diaria de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
+- "Es que en windows es muy complicado (o no funciona)."
+- "¿Pasarlo a producción?. Claro. Muy fácil......."
+- "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
+- **"¿compartimos el mismo entorno básico entre todo el departamento?"**
+- **....y mi favorita......**
+
+# "En mi equipo funciona".
+
+## Soluciones habituales
+
+- **Máquinas virtuales**
+
+## Soluciones habituales
+
+- Máquinas virtuales
+
+- **Imágenes del disco**
+
+## Soluciones habituales
+
+- Máquinas virtuales
+
+- Imágenes del disco
+
+- **Documentarlo *TODO*.** 
+
+ TODO->imagen de risas 
+
+## Docker
+
+### ¿qué es Docker?
+
+### Wikipedia:
+*"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
+
+## Docker
+
+### ¿Linux? ¿no lo puedo usar en Windows (o Mac OS)?
+
+Si. Se puede usar en Windows con ciertas restricciones.
+
+- Microsoft Hyper-V
+- 64bit Windows 10 Pro, Enterprise / Education 
+
+En Mac OS.
+
+- Yosemite 10.10.3 o superior
+
+Las habituales necesidades de hardware.
+
+Aunque es siempre recomendable usar Linux. (no solo para Docker, sino en general)
+
+## Docker
+
+
+
+## CONCLUSIÓN
+
+Ningún pinguino fué dañado en el curso de este trabajo
