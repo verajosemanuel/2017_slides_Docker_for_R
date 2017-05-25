@@ -82,10 +82,12 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 ## Docker
 
-### ¿qué es Docker?
+### ¿qué es Docker? <img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/>
 
 ### Wikipedia:
 *"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
+
+
 
 ## Docker
 
