@@ -1,5 +1,5 @@
 ---
-title: "3R: Entornos de desarrollo reproducibles para R con Docker"
+title: "R^3^: Entornos reproducibles para R"
 author: "Jose Manuel Vera Oteo"
 date: "25 de mayo de 2017"
 output: ioslides_presentation
@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "En windows el proceso es muy complicado (o no funciona)."
 - "¿Pasarlo a producción?. Claro. Muy fácil......."
-- **"Feliz con PC nuevo hasta que piensas que tienes que reinstalar y configurar todo."**
+- **"Feliz con PC nuevo hasta que caes que tienes que reinstalar y configurar todo."**
 
 ## La vida diaria de un usuario de R
 
@@ -56,11 +56,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - **Máquinas virtuales**
 
+De gran tamaño, es muy complicado mover de un sitio a otro y además tienen 
+requerimientos de computación exagerados. Es necesaria mucha memoria y cPU.
+
 ## Soluciones habituales
 
 - Máquinas virtuales
 
 - **Imágenes del disco**
+
+Mismo problema que las máquinas virtuales pero magnificado. Las plantillas se
+quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 ## Soluciones habituales
 
@@ -99,7 +105,80 @@ Aunque es siempre recomendable usar Linux. (no solo para Docker, sino en general
 ## Docker
 
 
+## Ventajas
+
+- **Aislamiento**
+
+No dependen del hardware ni del sistema operativo host.
+
+## Ventajas
+
+- Aislamiento
+- **Portabilidad**
+
+Permiten mover de manera sencilla el software de una máquina a otra.
+
+## Ventajas
+
+- Aislamiento
+- Portabilidad
+- **Sencillez**
+
+Su uso es relativamente sencillo. Basta conocer 4 ó 5 comandos y unas nociones
+muy básicas. Luego si queremos podemos profundizar.
+
+## Ventajas
+
+- Aislamiento
+- Portabilidad
+- Sencillez
+- **Muy popular**
+
+Aunque esto a veces alguien lo ve como una desventaja, en este caso nos
+permite acceder a muchísima documentación o ayuda de manera sencilla.
+Además hay imágenes para casi todo lo que nos imaginemos.
+
+## Conceptos básicos:
+
+- **contenedor**
+
+Es la parte activa con la que interactuamos para obtener un resultado.
+
+## Conceptos básicos:
+
+- contenedor
+- **imagen**
+
+Es la plantilla en la que se basa el contenedor para saber lo que tiene que hacer.
+
+
+## Conceptos básicos:
+
+- contenedor
+- imagen
+- **registro**
+
+Es el repositorio en el cual de manera abierta se ponen a disposición las imágenes.
+Uno de los más conocidos y usados es "Docker Hub".
+
+## Conceptos básicos:
+
+- contenedor
+- imagen
+- registro
+- **Dockerfile**
+
+Es la "receta" para construir una imagen desde cero. Si conocéis Puppet o Chef 
+se trata de un concepto similar.
+
+## RECOMENDACIONES
+
+- pocas capas
+- contenedores con solamente una función
+
 
 ## CONCLUSIÓN
 
 Ningún pinguino fué dañado en el curso de este trabajo
+
+Source: https://www.docker.com/
