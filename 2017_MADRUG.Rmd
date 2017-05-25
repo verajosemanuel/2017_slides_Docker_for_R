@@ -76,7 +76,9 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 - **Documentarlo *TODO*.** 
 
- TODO->imagen de risas 
+## ja
+
+<img src="images/th2.jpg" alt="Drawing" style="width: 400px;"/>
 
 ## Docker
 
@@ -91,16 +93,15 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 Si. Se puede usar en Windows con ciertas restricciones.
 
-- Microsoft Hyper-V
-- 64bit Windows 10 Pro, Enterprise / Education 
+- Microsoft Hyper-V 64bit Windows 10 Pro, Enterprise / Education 
 
-En Mac OS.
+También en Mac OS, Yosemite 10.10.3 o superior
 
-- Yosemite 10.10.3 o superior
+Procesadores 64 Bits, 4 GB RAM minimo.
 
-Las habituales necesidades de hardware.
+Aunque es siempre recomendable usar Linux.(no solo para Docker, sino en general)
 
-Aunque es siempre recomendable usar Linux. (no solo para Docker, sino en general)
+<img src="images/tux.png" alt="tux" style="width: 200px;"/>
 
 ## Docker
 
@@ -159,7 +160,7 @@ Es la plantilla en la que se basa el contenedor para saber lo que tiene que hace
 - **registro**
 
 Es el repositorio en el cual de manera abierta se ponen a disposición las imágenes.
-Uno de los más conocidos y usados es "Docker Hub".
+Uno de los más conocidos y usados es "Docker Hub". 
 
 ## Conceptos básicos:
 
@@ -169,12 +170,31 @@ Uno de los más conocidos y usados es "Docker Hub".
 - **Dockerfile**
 
 Es la "receta" para construir una imagen desde cero. Si conocéis Puppet o Chef 
-se trata de un concepto similar.
+se trata de un concepto similar. Un archivo de texto con instrucciones paso a
+paso para construir una imagen.
+
+## ¿para R?
+
+Para todo.Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB
+llamado alpine, Ubuntu (188 mb), CentOS (172 mb).....
+
+https://hub.docker.com/explore/
+
+
+
+
+
+
+## A hombros de gigantes
 
 ## RECOMENDACIONES
 
 - pocas capas
 - contenedores con solamente una función
+- atentos al disco duro
+- cuidado con producción
+- compartir
+- No reinventar la rueda
 
 
 ## CONCLUSIÓN
