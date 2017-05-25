@@ -9,30 +9,30 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - **"Nuevo proyecto: voy instalando paquetes según voy necesitando."**
 
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - **"No recuerdo cómo instalé aquella librería que necesito para este paquete."**
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - **"En windows el proceso es muy complicado (o no funciona)."**
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "En windows el proceso es muy complicado (o no funciona)."
 - **"¿Pasarlo a producción?. Claro. Muy fácil......."**
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
@@ -40,7 +40,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - "¿Pasarlo a producción?. Claro. Muy fácil......."
 - **"Feliz con PC nuevo hasta que caes que tienes que reinstalar y configurar todo."**
 
-## La vida diaria de un usuario de R
+## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
