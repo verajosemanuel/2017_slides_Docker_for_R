@@ -119,7 +119,7 @@ No dependen del hardware ni del sistema operativo host.
 - Aislamiento
 - **Portabilidad**
 
-Permiten mover de manera sencilla el software de una máquina a otra.
+Permiten mover de manera muy rápida y fácilmente el software de una máquina a otra.
 
 ## Ventajas
 
@@ -127,7 +127,7 @@ Permiten mover de manera sencilla el software de una máquina a otra.
 - Portabilidad
 - **Sencillez**
 
-Su uso es relativamente sencillo. Basta conocer 4 ó 5 comandos y unas nociones
+Su uso es relativamente sencillo. Basta conocer 5 ó 6 comandos y unas nociones
 muy básicas. Luego si queremos podemos profundizar.
 
 ## Ventajas
