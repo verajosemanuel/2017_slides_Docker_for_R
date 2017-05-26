@@ -49,6 +49,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - "¿Pasarlo a producción?. Claro. Muy fácil......."
 - "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
 - **"¿compartimos el mismo entorno básico entre todo el departamento?"**
+
 - **....y mi favorita......**
 
 # "En mi equipo funciona".
@@ -75,7 +76,7 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 - Imágenes del disco
 
-- **Documentarlo *TODO*.** 
+- **Lo documentamos *TODO*.** 
 
 <img src="images/th2.jpg" alt="Drawing" style="width: 400px;"/>
 
@@ -84,46 +85,48 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 Algunos paquetes o el mismo Rstudio intentan paliar el problema:
 
 - Packrat. Se activa en Rstudio por cada proyecto.
+
 - checkpoint. Paquete que fija el resto de paquetes a una versión.
 
 Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
-## Docker
+## ¿Qué es Docker?
 
-### ¿qué es Docker?
-
-<center><img src="images/docker_logo.png" alt="Docker logo" style="width: 200px;"/></center>
+<center><img src="images/docker_logo.png" style="width: 200px;"/></center>
 
 ### Wikipedia:
+
 *"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
 
-## Docker
+## ¿Qué es Docker?
 
-### ¿qué es Docker?
+<center><img src="images/whalepenguingo.png" style="width: 300px;"/></center>
 
-<center><img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/></center>
-
-### Román paladino:
+### Mi Definición:
 *"Lo bueno de la máquina virtual sin lo malo de la máquina virtual, aprovechando
-toda la potencia de linux con el lenguaje GO.*
+toda la potencia de linux. Sólo se virtualiza lo que se necesita. Del resto se
+encarga el sistema anfitrión".*
 
-## Docker
+## Docker vs. Máquina Virtual
 
-### ¿Linux? ¿no lo puedo usar en Windows (o Mac OS)?
+<center><img src="images/dockervsvm.jpg" style="width: 800px;"/></center>
 
-Si. Se puede usar en Windows con ciertas restricciones.
+##  ¿Linux? 
+
+### ¿Se puede usar en Windows (o Mac OS)?
+
+Si. Se puede usar en Windows cumpliendo ciertos requisitos.
 
 - Microsoft Hyper-V 64bit Windows 10 Pro, Enterprise / Education 
 
-También en Mac OS, Yosemite 10.10.3 o superior
+En Mac OS, Yosemite 10.10.3 o superior.
+- procesadores 64 Bits,
+- 4 GB RAM minimo.
 
-Procesadores 64 Bits, 4 GB RAM minimo.
+Siempre recomendable usar Linux (no solo para Docker, sino en general)
 
-Aunque es siempre recomendable usar Linux.(no solo para Docker, sino en general)
+<center><img src="images/tux.png" style="width: 200px;"/></center>
 
-<center><img src="images/tux.png" alt="tux" style="width: 200px;"/></center>
-
-## Docker
 
 ## Ventajas
 
@@ -155,8 +158,8 @@ muy básicas. Luego si queremos podemos profundizar.
 - Sencillez
 - **Muy popular**
 
-Aunque esto a veces alguien lo ve como una desventaja, en este caso nos
-permite acceder a muchísima documentación o ayuda de manera sencilla.
+Cada vez más usado, nos permite acceder a muchísima documentación o ayuda de 
+manera sencilla.
 Además hay imágenes para casi todo lo que nos imaginemos.
 
 ## Conceptos básicos
@@ -172,7 +175,7 @@ Es la parte activa con la que interactuamos. "Hace cosas".
 
 La plantilla en la que se basa el contenedor para saber lo que tiene que hacer.
 
-## Conceptos básicos:
+## Conceptos básicos
 
 - Contenedor
 - Imagen
@@ -181,10 +184,10 @@ La plantilla en la que se basa el contenedor para saber lo que tiene que hacer.
 Repositorio en el cual de manera abierta se ponen a disposición las imágenes.
 Uno de los más conocidos y usados es "Docker Hub". 
 
-[https://hub.docker.com/] (https://hub.docker.com/)
+https://hub.docker.com/
             
 
-## Conceptos básicos:
+## Conceptos básicos
 
 - Contenedor
 - Imagen
@@ -195,27 +198,40 @@ Es la *"receta"* para construir una imagen desde cero. Si conocéis Puppet o Che
 se trata de un concepto similar. Un archivo de texto con instrucciones paso a
 paso para construir una imagen.
 
-## ¿para R?
+## Arquitectura
 
-Para todo.
-Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB
-llamado alpine, Ubuntu , CentOS, Redis, MongoDB, Cassandra, Mysql.....
-Muchas de ellas *"oficiales"*.
+<center><img src="images/architecture.PNG" style="width: 800px;"/></center>
+
+## ¿Funciona para R?
+
+Entre otras muchas cosas.
+
+Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB (alpine),
+"todas"" las distribuciones Linux (Ubuntu , CentOS, Debian), 
+No Sql (Redis, MongoDB, Cassandra), Si Sql (Mysql, postgreSQL).....
+
+Muchas de las imagenes son *"oficiales"* de los propios desarrolladores
 
 https://hub.docker.com/explore/
 
 
-## Empieza el Rock!
+## ¡Let's Rocker! 
 
-Carl Boettiger (knitcitations, EML, RNeXML) y Dirk Eddelbuettel (Rcpp, RcppArmadillo, RcppEigen, digest...)
+<img src="images/carl.png" alt="tux" style="width: 100px;"/>
+Carl Boettiger (knitcitations, EML, RNeXML....) 
+
+<img src="images/dirk.png" alt="tux" style="width: 100px;"/>
+Dirk Eddelbuettel (Rcpp, RcppArmadillo, RcppEigen, digest...)
+
 mantienen **Rocker**, un repositorio muy completo con diferentes versiones de R.
+
 
 http://www.carlboettiger.info/
 
 http://dirk.eddelbuettel.com/
 
 
-## Rocker
+## Rocker sites
 
 En github:
 
@@ -240,13 +256,83 @@ docker run --rm -it p 8787:8787 rocker/rstudio
 
 ```
 Conectar con Rocker
+```
+localhost:8787 
+```
+<center><img src="images/login.PNG"  style="width: 300px;"/></center>
 
-Abrimos el navegador y en localhost:8787 tenemos el Rstudio
 
-<img src="images/login.PNG" alt="Drawing" align="middle" style="width: 300px;"/>
+## ¿Dónde están los datos?
 
+### Otro concepto básico: **Volúmenes**
+Los volúmenes son puntos de montaje que asociamos a un contenedor. Mapeados
+contra un directorio de nuestro sistema anfitrión nos permite tener acceso
+a su contenido.
 
-## Ejemplo de Dockerfile
+- En windows
+```
+docker run --rm -it p 8787:8787 -v \
+C://Users/miusuario/Documents/Docker:/srv/shiny-server 6dc473697f85
+```
+- En Linux (más fácil, por supuesto)
+```
+docker run --rm -it p 8787:8787 -v /home/data:/data 6dc473697f85
+```
+
+## Más comandos útiles
+
+- docker images
+```
+REPOSITORY           TAG         IMAGE ID            CREATED             SIZE
+rocker/shiny         latest      682eb5fda1f3        12 days ago         1.23 GB
+trescuatrodos        latest      fbac184a48f6        2 weeks ago         4.52 GB
+trescuatro           latest      7781ee1f031f        2 weeks ago         4.5 GB
+jvera/tidyviz        latest      3930c226a472        2 weeks ago         4.54 GB
+rocker/ropensci      latest      8bf0948db340        2 weeks ago         3.46 GB
+rocker/tidyverse     latest      83f91871d62f        3 weeks ago         1.56 GB
+ubuntu               latest      f7b3f317ec73        4 weeks ago         117 MB
+rocker/rstudio       latest      a3f43bf49425        2 months ago        990 MB
+hello-world          latest      48b5124b2768        4 months ago        1.84 kB
+d4w/nsenter          latest      9e4f13a0901e        8 months ago        83.8 kB
+```
+
+## Más comandos útiles
+
+- docker ps
+
+```
+CONTAINER ID IMAGE  COMMAND CREATED  STATUS  PORTS    NAMES
+fa049d375a71 ubuntu "/init" 7 s. ago Up 5 s. 3838/tcp, 0.0.0.0:8787->8787/tcp  \
+pensive_meninsky
+```
+
+- docker ps -a  
+
+(nos muestra también los contenedores parados)
+
+- docker -name
+```
+docker run -d -p 8787:8787 -name rockandroll -v /home/data:/data 6dc473697f8
+```
+
+## Más comandos útiles
+
+- docker images         (lista las imagenes)
+- docker build          (construye un contenedor con un Dockerfile)
+- docker rmi nombre/id  (borra la imagen)
+- docker stop           (para el contenedor)
+- docker rm nombre/id   (borra el contenedor)
+- docker system prune   (limpia el sistema)
+- docker commit         (guarda los cambios del contenedor)
+- dorcker start         (iniciar nuestro contenedor)
+
+**¡Cuidado!**
+
+Si no se guardan los cambios el contenedor vuelve al estado inicial. Pero...
+
+## es mejor usar el Dockerfile
+
+Es el mejor método para guardar los cambios de nuestro contenedor y compartirlo.
 
 ```
 FROM rocker/rstudio:latest
@@ -254,86 +340,113 @@ FROM rocker/rstudio:latest
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
   libcairo2-dev \
-  libsqlite-dev \
-  libmariadbd-dev \
-  libmariadb-client-lgpl-dev \
   libpq-dev \
   libudunits2-dev \
-  libgdal1-dev \
-  libproj-dev \
   && . /etc/environment \
   && install2.r --error \
-	devtools \
-	tidyverse ggplot2 profvis formatR remotes rio validate MASS magrittr 
+	devtools tidyverse ggplot2 profvis formatR \
+	remotes rio validate MASS magrittr 
 	
 RUN Rscript -e 'devtools::install_github("smach/rmiscutils")' 
- 
 RUN rm -rf /tmp/downloaded_packages/
 
 ```
 
 ## Recomendaciones para el Dockerfile
 
-- pocas capas
-- contenedores con solamente una función
+- **Limitar en la medida de lo posible las capas**.
+
+
+## Recomendaciones para el Dockerfile
+
+- Limitar en la medida de lo posible las capas.
+- **Contenedores para solamente una función**.
+
+## Recomendaciones para el Dockerfile
+
+- Limitar en la medida de lo posible las capas.
+- Contenedores con solamente una función.
+- **No incluir datos. Los datos "viven" fuera de los contenedores**.
+
+## Recomendaciones para el Dockerfile
+
+- Limitar en la medida de lo posible las capas.
+- Contenedores con solamente una función.
+- No incluir datos. Los datos "viven" fuera de los contenedores.
+- **Aunque hay contenedores de datos**.
+
+## Consejos generales
+
+- **Atentos al disco duro sobre todo al principio**.
 
 
 ## Consejos generales
 
-- Atentos al disco duro cuando estéis aprendiendo
-- Cuidado con producción
-- Compartir imagenes *"es bien"*
-- No reinventar la rueda
-
-## CONCLUSIÓN
-
-Ningún pinguino fué dañado en el curso de este trabajo
-
-Source: https://www.docker.com/
+- Atentos al disco duro sobre todo al principio.
+- **De momento y depende para qué, no recomiendo contenedores en producción**.
 
 
+## Consejos generales
 
-```
+- Atentos al disco duro sobre todo al principio.
+- De momento y depende para qué, no recomiendo contenedores en producción.
+- **Compartir imagenes *"es bien"*.**.
 
-docker images
-REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
-jvera/tidyviz-base   latest              d1103ed35e5b        9 days ago          3.94 GB
-rocker/shiny         latest              682eb5fda1f3        12 days ago         1.23 GB
-trescuatrodos        latest              fbac184a48f6        2 weeks ago         4.52 GB
-trescuatro           latest              7781ee1f031f        2 weeks ago         4.5 GB
-jvera/tidyviz        latest              3930c226a472        2 weeks ago         4.54 GB
-rocker/ropensci      latest              8bf0948db340        2 weeks ago         3.46 GB
-rocker/tidyverse     latest              83f91871d62f        3 weeks ago         1.56 GB
-ubuntu               latest              f7b3f317ec73        4 weeks ago         117 MB
-rocker/rstudio       latest              a3f43bf49425        2 months ago        990 MB
-hello-world          latest              48b5124b2768        4 months ago        1.84 kB
-d4w/nsenter          latest              9e4f13a0901e        8 months ago        83.8 kB
 
-docker run -d --rm -p 8787:8787 -v C://Users/jvera/Documents/Docker:/srv/shiny-server tidyviz-base
-Unable to find image 'tidyviz-base:latest' locally
+## Consejos generales
 
-docker run -d --rm -p 8787:8787 -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
-fa049d375a715923cd393b613d958b50c30651e5f172b656f556b67d2e5ca904
+- Atentos al disco duro sobre todo al principio.
+- De momento y depende para qué, no recomiendo contenedores en producción.
+- Compartir imagenes *"es bien"*.
+- **No reinventar la rueda, aprovecharse de los miles de imágenes que hay**.
 
-docker ps
-CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                              NAMES
-fa049d375a71        jvera/tidyviz-base   "/init"             7 seconds ago       Up 5 seconds        3838/tcp, 0.0.0.0:8787->8787/tcp   pensive_meninsky
+## Consejos generales
 
-docker stop pensive_meninsky
-pensive_meninsky
+- Atentos al disco duro sobre todo al principio.
+- De momento y depende para qué, no recomiendo contenedores en producción.
+- Compartir imagenes *"es bien"*.
+- No reinventar la rueda, aprovecharse de los miles de imágenes que hay.
+- **Estad atentos. El proyecto evoluciona muy rápido.**.
 
-docker ps -a
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+## Cosas (un poco) avanzadas
 
-docker run -d --rm -p 8787:8787 -name viva_el_rock -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
-unknown shorthand flag: 'n' in -name
-See 'docker run --help'.
+- Machine:  Despliegue rápido de motores de Docker en cloud/local.
 
-docker run -d --rm -p 8787:8787 --name viva_el_rock -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
-212e27d0e90e0401285002d353e0a66b63f1149a97de731593f7ac155132bd50
+- Swarm:    clusters de contenedores. Varios motores docker como uno solo.
 
-docker ps
-CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                              NAMES
-212e27d0e90e        jvera/tidyviz-base   "/init"             5 seconds ago       Up 4 seconds        3838/tcp, 0.0.0.0:8787->8787/tcp   viva_el_rock
+- Compose:  aplicaciones multicontenedor.
 
-```
+- Kubernetes: Orquestación
+
+## Enlaces
+
+https://www.docker.com/
+
+https://www.docker.com/newsletter-subscription
+
+https://github.com/veggiemonk/awesome-docker
+
+Docker Hub:
+
+appsecco/data-science-toolbox
+
+kaggle/rstats
+
+kaggle/julia
+
+kaggle/python
+
+
+## Gracias!
+
+
+DockerHub: https://hub.docker.com/u/jvera/
+
+Twitter: @verajosemanuel
+
+
+
+
+
+
+#######_Ningún pinguino fué dañado en la elaboración de este trabajo._#######
