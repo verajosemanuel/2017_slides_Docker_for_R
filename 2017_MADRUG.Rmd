@@ -92,7 +92,7 @@ Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 ### ¿qué es Docker?
 
-<img src="images/docker_logoo.png" alt="Docker logo" style="width: 300px;"/>
+<div align="center><img src="images/docker_logo.png" alt="Docker logo" style="width: 300px;"/></div>
 
 ### Wikipedia:
 *"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
@@ -290,3 +290,50 @@ RUN rm -rf /tmp/downloaded_packages/
 Ningún pinguino fué dañado en el curso de este trabajo
 
 Source: https://www.docker.com/
+
+
+
+```
+
+docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+jvera/tidyviz-base   latest              d1103ed35e5b        9 days ago          3.94 GB
+rocker/shiny         latest              682eb5fda1f3        12 days ago         1.23 GB
+trescuatrodos        latest              fbac184a48f6        2 weeks ago         4.52 GB
+trescuatro           latest              7781ee1f031f        2 weeks ago         4.5 GB
+jvera/tidyviz        latest              3930c226a472        2 weeks ago         4.54 GB
+rocker/ropensci      latest              8bf0948db340        2 weeks ago         3.46 GB
+rocker/tidyverse     latest              83f91871d62f        3 weeks ago         1.56 GB
+ubuntu               latest              f7b3f317ec73        4 weeks ago         117 MB
+rocker/rstudio       latest              a3f43bf49425        2 months ago        990 MB
+hello-world          latest              48b5124b2768        4 months ago        1.84 kB
+d4w/nsenter          latest              9e4f13a0901e        8 months ago        83.8 kB
+
+docker run -d --rm -p 8787:8787 -v C://Users/jvera/Documents/Docker:/srv/shiny-server tidyviz-base
+Unable to find image 'tidyviz-base:latest' locally
+
+docker run -d --rm -p 8787:8787 -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
+fa049d375a715923cd393b613d958b50c30651e5f172b656f556b67d2e5ca904
+
+docker ps
+CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                              NAMES
+fa049d375a71        jvera/tidyviz-base   "/init"             7 seconds ago       Up 5 seconds        3838/tcp, 0.0.0.0:8787->8787/tcp   pensive_meninsky
+
+docker stop pensive_meninsky
+pensive_meninsky
+
+docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+docker run -d --rm -p 8787:8787 -name viva_el_rock -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
+unknown shorthand flag: 'n' in -name
+See 'docker run --help'.
+
+docker run -d --rm -p 8787:8787 --name viva_el_rock -v C://Users/jvera/Documents/Docker:/srv/shiny-server jvera/tidyviz-base
+212e27d0e90e0401285002d353e0a66b63f1149a97de731593f7ac155132bd50
+
+docker ps
+CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                              NAMES
+212e27d0e90e        jvera/tidyviz-base   "/init"             5 seconds ago       Up 4 seconds        3838/tcp, 0.0.0.0:8787->8787/tcp   viva_el_rock
+
+```
