@@ -92,7 +92,7 @@ Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 ### ¿qué es Docker?
 
-<div align="center><img src="images/docker_logo.png" alt="Docker logo" style="width: 300px;"/></div>
+<center><img src="images/docker_logo.png" alt="Docker logo" style="width: 200px;"/></center>
 
 ### Wikipedia:
 *"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
@@ -101,7 +101,7 @@ Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 ### ¿qué es Docker?
 
-<img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/>
+<center><img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/></center>
 
 ### Román paladino:
 *"Lo bueno de la máquina virtual sin lo malo de la máquina virtual, aprovechando
@@ -121,7 +121,7 @@ Procesadores 64 Bits, 4 GB RAM minimo.
 
 Aunque es siempre recomendable usar Linux.(no solo para Docker, sino en general)
 
-<img src="images/tux.png" alt="tux" style="width: 200px;"/>
+<center><img src="images/tux.png" alt="tux" style="width: 200px;"/></center>
 
 ## Docker
 
