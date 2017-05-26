@@ -1,5 +1,6 @@
 ---
-title: "R^3^: Entornos reproducibles para R"
+title: "Rockin' in the free world"
+subtitle: "Entornos reproducibles para R con Docker"
 author: "Jose Manuel Vera Oteo"
 date: "25 de mayo de 2017"
 output: ioslides_presentation
@@ -57,7 +58,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - **Máquinas virtuales**
 
 De gran tamaño, es muy complicado mover de un sitio a otro y además tienen 
-requerimientos de computación exagerados. Es necesaria mucha memoria y cPU.
+requerimientos de computación exagerados. Es necesaria mucha memoria y CPU.
 
 ## Soluciones habituales
 
@@ -76,18 +77,35 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 - **Documentarlo *TODO*.** 
 
-## ja
-
 <img src="images/th2.jpg" alt="Drawing" style="width: 400px;"/>
+
+## Soluciones de R
+
+Algunos paquetes o el mismo Rstudio intentan paliar el problema:
+
+- Packrat. Se activa en Rstudio por cada proyecto.
+- checkpoint. Paquete que fija el resto de paquetes a una versión.
+
+Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 ## Docker
 
-### ¿qué es Docker? <img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/>
+### ¿qué es Docker?
+
+<img src="images/docker_logoo.png" alt="Docker logo" style="width: 300px;"/>
 
 ### Wikipedia:
 *"Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de Virtualización a nivel de sistema operativo en Linux.*
 
+## Docker
 
+### ¿qué es Docker?
+
+<img src="images/whalepenguingo.png" alt="Docker friends" style="width: 300px;"/>
+
+### Román paladino:
+*"Lo bueno de la máquina virtual sin lo malo de la máquina virtual, aprovechando
+toda la potencia de linux con el lenguaje GO.*
 
 ## Docker
 
@@ -107,7 +125,6 @@ Aunque es siempre recomendable usar Linux.(no solo para Docker, sino en general)
 
 ## Docker
 
-
 ## Ventajas
 
 - **Aislamiento**
@@ -119,7 +136,8 @@ No dependen del hardware ni del sistema operativo host.
 - Aislamiento
 - **Portabilidad**
 
-Permiten mover de manera muy rápida y fácilmente el software de una máquina a otra.
+Permiten mover de manera muy rápida y fácilmente el software de una máquina a
+otra.
 
 ## Ventajas
 
@@ -141,63 +159,131 @@ Aunque esto a veces alguien lo ve como una desventaja, en este caso nos
 permite acceder a muchísima documentación o ayuda de manera sencilla.
 Además hay imágenes para casi todo lo que nos imaginemos.
 
+## Conceptos básicos
+
+- **Contenedor**
+
+Es la parte activa con la que interactuamos. "Hace cosas".
+
+## Conceptos básicos
+
+- Contenedor
+- **Imagen**
+
+La plantilla en la que se basa el contenedor para saber lo que tiene que hacer.
+
 ## Conceptos básicos:
 
-- **contenedor**
+- Contenedor
+- Imagen
+- **Registro**
 
-Es la parte activa con la que interactuamos para obtener un resultado.
-
-## Conceptos básicos:
-
-- contenedor
-- **imagen**
-
-Es la plantilla en la que se basa el contenedor para saber lo que tiene que hacer.
-
-
-## Conceptos básicos:
-
-- contenedor
-- imagen
-- **registro**
-
-Es el repositorio en el cual de manera abierta se ponen a disposición las imágenes.
+Repositorio en el cual de manera abierta se ponen a disposición las imágenes.
 Uno de los más conocidos y usados es "Docker Hub". 
 
+[https://hub.docker.com/] (https://hub.docker.com/)
+            
+
 ## Conceptos básicos:
 
-- contenedor
-- imagen
-- registro
+- Contenedor
+- Imagen
+- Registro
 - **Dockerfile**
 
-Es la "receta" para construir una imagen desde cero. Si conocéis Puppet o Chef 
+Es la *"receta"* para construir una imagen desde cero. Si conocéis Puppet o Chef 
 se trata de un concepto similar. Un archivo de texto con instrucciones paso a
 paso para construir una imagen.
 
 ## ¿para R?
 
-Para todo.Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB
-llamado alpine, Ubuntu (188 mb), CentOS (172 mb).....
+Para todo.
+Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB
+llamado alpine, Ubuntu , CentOS, Redis, MongoDB, Cassandra, Mysql.....
+Muchas de ellas *"oficiales"*.
 
 https://hub.docker.com/explore/
 
 
+## Empieza el Rock!
+
+Carl Boettiger (knitcitations, EML, RNeXML) y Dirk Eddelbuettel (Rcpp, RcppArmadillo, RcppEigen, digest...)
+mantienen **Rocker**, un repositorio muy completo con diferentes versiones de R.
+
+http://www.carlboettiger.info/
+
+http://dirk.eddelbuettel.com/
 
 
+## Rocker
+
+En github:
+
+https://github.com/rocker-org/rocker
+
+En Docker Hub:
+
+https://hub.docker.com/u/rocker/
+
+## ¡Empieza el baile! (comandos básicos)
+
+Obtener una imagen
+
+```
+docker pull rocker/rstudio
+
+```
+Generar un contenedor a partir de la imagen
+
+```
+docker run --rm -it p 8787:8787 rocker/rstudio
+
+```
+Conectar con Rocker
+
+Abrimos el navegador y en localhost:8787 tenemos el Rstudio
+
+<img src="images/login.PNG" alt="Drawing" align="middle" style="width: 300px;"/>
 
 
-## A hombros de gigantes
+## Ejemplo de Dockerfile
 
-## RECOMENDACIONES
+```
+FROM rocker/rstudio:latest
+
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+  libxml2-dev \
+  libcairo2-dev \
+  libsqlite-dev \
+  libmariadbd-dev \
+  libmariadb-client-lgpl-dev \
+  libpq-dev \
+  libudunits2-dev \
+  libgdal1-dev \
+  libproj-dev \
+  && . /etc/environment \
+  && install2.r --error \
+	devtools \
+	tidyverse ggplot2 profvis formatR remotes rio validate MASS magrittr 
+	
+RUN Rscript -e 'devtools::install_github("smach/rmiscutils")' 
+ 
+RUN rm -rf /tmp/downloaded_packages/
+
+```
+
+## Recomendaciones para el Dockerfile
 
 - pocas capas
 - contenedores con solamente una función
-- atentos al disco duro
-- cuidado con producción
-- compartir
-- No reinventar la rueda
 
+
+## Consejos generales
+
+- Atentos al disco duro cuando estéis aprendiendo
+- Cuidado con producción
+- Compartir imagenes *"es bien"*
+- No reinventar la rueda
 
 ## CONCLUSIÓN
 
