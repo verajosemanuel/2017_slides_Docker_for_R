@@ -418,6 +418,8 @@ RUN rm -rf /tmp/downloaded_packages/
 
 - Kubernetes: Orquestación
 
+- CoreOS: Sistema operativo dedicado para aplicaciones basadas en contenedores
+
 ## Enlaces
 
 https://www.docker.com/
