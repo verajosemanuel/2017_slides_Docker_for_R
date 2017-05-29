@@ -408,7 +408,7 @@ RUN rm -rf /tmp/downloaded_packages/
 - No reinventar la rueda, aprovecharse de los miles de imágenes que hay.
 - **Estad atentos. El proyecto evoluciona muy rápido.**.
 
-## Cosas (un poco) avanzadas
+## Cosas (un poco) avanzadas: Rock con Orquesta
 
 - Machine:  Despliegue rápido de motores de Docker en cloud/local.
 
