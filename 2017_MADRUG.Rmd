@@ -78,7 +78,7 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 - **Lo documentamos *TODO*.** 
 
-<img src="images/th2.jpg" alt="Drawing" style="width: 400px;"/>
+<img src="images/lol.gif" alt="lol" style="width: 400px;"/>
 
 ## Soluciones de R
 
