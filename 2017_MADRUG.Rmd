@@ -352,6 +352,45 @@ RUN rm -rf /tmp/downloaded_packages/
 
 ```
 
+## Con la canción empezada
+
+¿qué ocurre si queremos compartir nuestro entorno sin tener que componer un Dockerfile desde cero?
+
+## Con la canción empezada
+
+http://o2r.info/2017/05/30/containerit-package/
+
+Podemos generar un Dockerfile con nuestras sesiones de trabajo.
+
+## Con la canción empezada
+
+*devtools::install_github("r-hub/sysreqs")*
+
+*devtools::install_github("o2r-project/containerit")*
+
+*library(containerit)*
+
+*dockerfile_object <- dockerfile()*
+
+*print(dockerfile_object)*
+
+## Con la canción empezada
+
+FROM rocker/r-ver:3.4.0
+LABEL maintainer="jvera"
+RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
+ && apt-get install -y libcurl4-openssl-dev \
+ 	libpq-dev \
+ 	libssl-dev \
+ 	make \
+ 	pandoc \
+ 	pandoc-citeproc \
+ 	zlib1g-dev
+ RUN ["install2.r", "-r 'https://cloud.r-project.org'", "anytime", "Hmisc", "ggplot2", "Formula", "survival", "lattice",  "RPostgreSQL", "DBI", "plyr", "tidyr", "pathological", "magrittr", "rio", "dplyr", "tibble", "pacman", "Rcpp", "assertive.properties", "assertive.types", "assertthat", "digest", "R6", "cellranger", "futile.options", "backports", "acepack", "RApiDatetime", "httr", "assertive.strings", "rlang", "lazyeval", "curl", "readxl", "data.table", "rpart", "Matrix", "checkmate", "devtools", "stringr", "foreign", "htmlwidgets", "munsell", "base64enc", "htmltools", "nnet", "gridExtra", "htmlTable", "codetools", "withr", "assertive.base", "gtable", "git2r", "scales", "stringi", "latticeExtra", "assertive.reflection", "futile.logger", "openxlsx", "lambda.r", "RColorBrewer", "assertive.numbers", "colorspace", "cluster", "assertive.files", "memoise", "knitr", "haven", "remotes"]
+ RUN ["installGithub.r", "krlmlr/here@efd50cb", "krlmlr/rprojroot@6d1069c"]
+ WORKDIR /payload/
+ CMD ["R"]
+
 ## Recomendaciones para el Dockerfile
 
 - **Limitar en la medida de lo posible las capas**.
@@ -390,21 +429,21 @@ RUN rm -rf /tmp/downloaded_packages/
 
 - Atentos al disco duro sobre todo al principio.
 - De momento y depende para qué, no recomiendo contenedores en producción.
-- **Compartir imagenes *"es bien"*.**.
+- **Compartir imagenes**.
 
 
 ## Consejos generales
 
 - Atentos al disco duro sobre todo al principio.
 - De momento y depende para qué, no recomiendo contenedores en producción.
-- Compartir imagenes *"es bien"*.
+- Compartir imagenes.
 - **No reinventar la rueda, aprovecharse de los miles de imágenes que hay**.
 
 ## Consejos generales
 
 - Atentos al disco duro sobre todo al principio.
 - De momento y depende para qué, no recomiendo contenedores en producción.
-- Compartir imagenes *"es bien"*.
+- Compartir imagenes.
 - No reinventar la rueda, aprovecharse de los miles de imágenes que hay.
 - **Estad atentos. El proyecto evoluciona muy rápido.**.
 
