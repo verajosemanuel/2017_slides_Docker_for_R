@@ -364,18 +364,21 @@ Podemos generar un Dockerfile con nuestras sesiones de trabajo.
 
 ## Con la canción empezada
 
-*devtools::install_github("r-hub/sysreqs")*
+```
+devtools::install_github("r-hub/sysreqs")
 
-*devtools::install_github("o2r-project/containerit")*
+devtools::install_github("o2r-project/containerit")
 
-*library(containerit)*
+library(containerit)
 
-*dockerfile_object <- dockerfile()*
+dockerfile_object <- dockerfile()
 
-*print(dockerfile_object)*
+print(dockerfile_object)
+```
 
 ## Con la canción empezada
 
+```
 FROM rocker/r-ver:3.4.0
 LABEL maintainer="jvera"
 RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
@@ -390,6 +393,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
  RUN ["installGithub.r", "krlmlr/here@efd50cb", "krlmlr/rprojroot@6d1069c"]
  WORKDIR /payload/
  CMD ["R"]
+```
 
 ## Recomendaciones para el Dockerfile
 
