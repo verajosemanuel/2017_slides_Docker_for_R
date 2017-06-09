@@ -428,6 +428,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
 - Atentos al disco duro sobre todo al principio.
 - **De momento y depende para qué, no recomiendo contenedores en producción**.
 
+<img src="images/bomb.gif" alt="bomb" style="width: 400px;"/>
 
 ## Consejos generales
 
@@ -485,13 +486,10 @@ kaggle/python
 ## Gracias!
 
 
-DockerHub: https://hub.docker.com/u/jvera/
+<img src="images/end.gif" alt="end" style="width: 400px;"/>
+
 
 Twitter: @verajosemanuel
-
-
-
-
-
+DockerHub: https://hub.docker.com/u/jvera/
 
 #######_Ningún pinguino fué dañado en la elaboración de este trabajo._#######
