@@ -472,6 +472,8 @@ https://www.docker.com/newsletter-subscription
 
 https://github.com/veggiemonk/awesome-docker
 
+https://github.com/wch/harbor
+
 Docker Hub:
 
 appsecco/data-science-toolbox
