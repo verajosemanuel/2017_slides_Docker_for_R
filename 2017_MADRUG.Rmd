@@ -62,7 +62,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - **....y mi favorita......**
 
-# "En mi equipo funciona".
+#  
+<center><img src="images/worksonmymachine.jpg" alt="works" style="width: 400px;"/></center>
 
 ## Soluciones habituales
 
