@@ -487,6 +487,8 @@ https://github.com/veggiemonk/awesome-docker
 
 https://github.com/wch/harbor
 
+http://o2r.info/2016/12/15/investigating-docker-and-R/
+
 Docker Hub:
 
 appsecco/data-science-toolbox
