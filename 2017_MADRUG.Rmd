@@ -489,6 +489,8 @@ https://github.com/wch/harbor
 
 http://o2r.info/2016/12/15/investigating-docker-and-R/
 
+https://cran.r-project.org/web/packages/liftr/vignettes/liftr-intro.html
+
 Docker Hub:
 
 appsecco/data-science-toolbox
