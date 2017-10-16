@@ -536,5 +536,5 @@ Twitter: @verajosemanuel
 
 DockerHub: https://hub.docker.com/u/jvera/
 
-Blogdown: http://jvera.netlify.com
+Blogdown: http://jvera.rbind.io
 
