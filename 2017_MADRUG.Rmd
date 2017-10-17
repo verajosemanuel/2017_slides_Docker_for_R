@@ -2,7 +2,7 @@
 title: "Rockin' in the free world"
 subtitle: "Entornos reproducibles para R con Docker"
 author: "Jose Manuel Vera Oteo"
-date: "25 de Septiembre de 2017"
+date: "19 de Octubre de 2017"
 output: ioslides_presentation
 ---
 
@@ -31,14 +31,14 @@ knitr::opts_chunk$set(echo = FALSE)
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "En windows el proceso es muy complicado (o no funciona)."
-- **"¿Pasarlo a producción?. Claro. Muy fácil......."**
+- **"¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"**
 
 ## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "En windows el proceso es muy complicado (o no funciona)."
-- "¿Pasarlo a producción?. Claro. Muy fácil......."
+- "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
 - **"Feliz con PC nuevo hasta que caes que tienes que reinstalar y configurar todo."**
 
 ## La vida de un usuario de R
@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "Es que en windows es muy complicado (o no funciona)."
-- "¿Pasarlo a producción?. Claro. Muy fácil......."
+- "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
 - "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
 - **"¿compartimos el mismo entorno básico entre todo el departamento?"**
 
@@ -55,14 +55,15 @@ knitr::opts_chunk$set(echo = FALSE)
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "Es que en windows es muy complicado (o no funciona)."
-- "¿Pasarlo a producción?. Claro. Muy fácil......."
+- "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
 - "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
 - "¿compartimos el mismo entorno básico entre todo el departamento?"
 - **Desarrollo en mi equipo con windows pero el servidor es Linux**
 
-- **....y mi favorita......**
+- **....y la excusa favorita......**
 
-# "En mi equipo funciona".
+#  
+<center><img src="images/worksonmymachine.jpg" alt="works" style="width: 400px;"/></center>
 
 ## Soluciones habituales
 
@@ -75,7 +76,7 @@ requerimientos de computación exagerados. Es necesaria mucha memoria y CPU.
 
 - Usamos máquinas virtuales
 
-- ** Guardamos Imágenes del disco**
+- **Guardamos Imágenes del disco**
 
 Mismo problema que las máquinas virtuales pero magnificado. Las plantillas se
 quedan obsoletas y hay que actualizarlas cada cierto tiempo.
@@ -271,7 +272,10 @@ Conectar con Rocker
 ```
 localhost:8787 
 ```
-<center><img src="images/login.PNG"  style="width: 300px;"/></center>
+
+## Login
+
+<center><img src="images/login.PNG"  style="width: 600px;"/></center>
 
 
 ## ¿Dónde están los datos?
@@ -322,9 +326,9 @@ pensive_meninsky
 
 (nos muestra también los contenedores parados)
 
-- docker --name="nombre"
+- docker -name
 ```
-docker run -d -p 8787:8787 --name="rockandroll" -v /home/data:/data 6dc473697f8
+docker run -d -p 8787:8787 -name rockandroll -v /home/data:/data 6dc473697f8
 ```
 
 ## Más comandos útiles
@@ -438,31 +442,43 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
 ## Consejos generales
 
 - Atentos al disco duro sobre todo al principio.
-- **De momento y depende para qué, no recomiendo contenedores en producción**.
+- **Comparte las imagenes. Tu trabajo puede ser útil para alguien.**
+
+
+## Consejos generales
+
+- Atentos al disco duro sobre todo al principio.
+- Comparte las imagenes. Tu trabajo puede ser útil para alguien.
+- **No reinventar la rueda, aprovecharse de los miles de imágenes que hay.**
+
+
+## Consejos generales
+
+- Atentos al disco duro sobre todo al principio.
+- Comparte las imagenes. Tu trabajo puede ser útil para alguien.
+- No reinventar la rueda, aprovecharse de los miles de imágenes que hay.
+- **Estad atentos. El proyecto evoluciona muy/demasiado rápido.**
+
+
+## Por ejemplo:
+
+**liftr**: paquete R que permite levantar un contenedor con el entorno definido para un reporting automatizado
+
+https://liftr.me/
+
+<img src="images/liftr.png" alt="liftr workflow" style="width: 800px;"/>
+
+
+## Consejos generales
+
+- Atentos al disco duro sobre todo al principio.
+- Comparte las imagenes. Tu trabajo puede ser útil para alguien.
+- No reinventar la rueda, hay miles de imágenes.
+- Estad atentos. El proyecto evoluciona muy/demasiado rápido.
+- **NUNCA para sistemas críticos en producción.**
 
 <img src="images/bomb.gif" alt="bomb" style="width: 400px;"/>
 
-## Consejos generales
-
-- Atentos al disco duro sobre todo al principio.
-- De momento y depende para qué, no recomiendo contenedores en producción.
-- **Compartir imagenes**.
-
-
-## Consejos generales
-
-- Atentos al disco duro sobre todo al principio.
-- De momento y depende para qué, no recomiendo contenedores en producción.
-- Compartir imagenes.
-- **No reinventar la rueda, aprovecharse de los miles de imágenes que hay**.
-
-## Consejos generales
-
-- Atentos al disco duro sobre todo al principio.
-- De momento y depende para qué, no recomiendo contenedores en producción.
-- Compartir imagenes.
-- No reinventar la rueda, aprovecharse de los miles de imágenes que hay.
-- **Estad atentos. El proyecto evoluciona muy rápido.**.
 
 ## Cosas (un poco) avanzadas: Rock con Orquesta
 
@@ -480,13 +496,20 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
 
 https://www.docker.com/
 
-https://www.docker.com/newsletter-subscription
-
 https://github.com/veggiemonk/awesome-docker
 
 https://github.com/wch/harbor
 
-Docker Hub:
+http://o2r.info/2016/12/15/investigating-docker-and-R/
+
+https://cran.r-project.org/web/packages/liftr/vignettes/liftr-intro.html
+
+http://seankross.com/2017/09/17/Enough-Docker-to-be-Dangerous.html
+
+https://github.com/PRL-PRG/docker-r-full-base
+
+
+## Más Enlaces
 
 appsecco/data-science-toolbox
 
@@ -496,6 +519,20 @@ kaggle/julia
 
 kaggle/python
 
+/r/rocker/ropensci/
+
+https://travis-ci.org/
+
+Jupyter:  https://www.dataquest.io/blog/docker-data-science/
+
+https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/
+
+## Resumiendo
+
+1. Muy útil para el desarrollo. Ahorra mucho tiempo en configuraciones.
+2. Compartir fácilmente. Desplegar desde cualquier lugar con los registros y los Dockerfiles.
+3. Desarrollo desde cualquier plataforma origen para cualquier plataforma destino.
+4. NUNCA aplicaciones críticas en producción. (de momento)
 
 ## Gracias!
 
@@ -504,6 +541,7 @@ kaggle/python
 
 
 Twitter: @verajosemanuel
+
 DockerHub: https://hub.docker.com/u/jvera/
 
-#######_Ningún pinguino fué dañado en la elaboración de este trabajo._#######
+Blogdown: http://jvera.rbind.io
