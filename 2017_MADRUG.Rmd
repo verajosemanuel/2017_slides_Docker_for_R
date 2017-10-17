@@ -265,7 +265,9 @@ docker pull rocker/rstudio
 Generar un contenedor a partir de la imagen
 
 ```
-docker run --rm -it p 8787:8787 rocker/rstudio
+docker run --rm -it -p 8787:8787 rocker/rstudio
+
+docker run -d -p 8787:8787 rocker/rstudio:3.2.0
 
 ```
 Conectar con Rocker
