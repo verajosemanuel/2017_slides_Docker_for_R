@@ -101,6 +101,8 @@ Algunos paquetes o el mismo Rstudio intentan paliar el problema:
 
 - minicran. crea un repo cran miniatura local con nuestros paquetes.
 
+- mran Time machine: https://mran.microsoft.com/timemachine/
+
 Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 ## ¿Qué es Docker?
