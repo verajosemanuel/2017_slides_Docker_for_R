@@ -12,34 +12,43 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## La vida de un usuario de R
 
-- **"Nuevo proyecto: voy instalando paquetes según voy necesitando."**
+- **"Nuevo proyecto."**
 
 
 ## La vida de un usuario de R
 
-- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "Nuevo proyecto."
 - **"No recuerdo cómo instalé aquella librería que necesito para este paquete."**
 
 ## La vida de un usuario de R
 
-- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "Nuevo proyecto."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
-- **"En windows el proceso es muy complicado (o no funciona)."**
+- **"En windows."**
 
 ## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
-- "En windows el proceso es muy complicado (o no funciona)."
-- **"¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"**
+- "En windows."
+- **"¿Pasarlo a producción? ¿todo igual?"**
 
 ## La vida de un usuario de R
 
 - "Nuevo proyecto: voy instalando paquetes según voy necesitando."
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
-- "En windows el proceso es muy complicado (o no funciona)."
-- "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
-- **"Feliz con PC nuevo hasta que caes que tienes que reinstalar y configurar todo."**
+- "En windows."
+- "¿Pasarlo a producción? ¿todo igual?"
+- **"PC nuevo? Estupendo!"**
+
+## La vida de un usuario de R
+
+- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
+- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
+- "En windows."
+- "¿Pasarlo a producción? ¿todo igual?"
+- "PC nuevo? Estupendo!"
+- **"Entornos compartidos."**
 
 ## La vida de un usuario de R
 
@@ -48,17 +57,8 @@ knitr::opts_chunk$set(echo = FALSE)
 - "Es que en windows es muy complicado (o no funciona)."
 - "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
 - "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
-- **"¿compartimos el mismo entorno básico entre todo el departamento?"**
-
-## La vida de un usuario de R
-
-- "Nuevo proyecto: voy instalando paquetes según voy necesitando."
-- "No recuerdo cómo instalé aquella librería que necesito para este paquete."
-- "Es que en windows es muy complicado (o no funciona)."
-- "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
-- "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
-- "¿compartimos el mismo entorno básico entre todo el departamento?"
-- **Desarrollo en mi equipo con windows pero el servidor es Linux**
+- "Entornos compartidos."
+- **Desarrollo en otra plataforma.**
 
 - **....y la excusa favorita......**
 
@@ -93,17 +93,17 @@ quedan obsoletas y hay que actualizarlas cada cierto tiempo.
 
 ## Soluciones de R
 
-Algunos paquetes o el mismo Rstudio intentan paliar el problema:
+Algunos paquetes o el mismo Rstudio intentan paliar el problema o alguna de sus partes:
 
-- Packrat. Se activa en Rstudio por cada proyecto.
+- **Packrat**
 
-- checkpoint. Paquete que fija el resto de paquetes a una versión.
+- **checkpoint**
 
-- minicran. crea un repo cran miniatura local con nuestros paquetes.
+- **minicran**
 
-- mran Time machine: https://mran.microsoft.com/timemachine/
+- **mran Time machine**
 
-Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
+Seguimos sin solucionar el problema. Son soluciones a posteriori.
 
 ## ¿Qué es Docker?
 
@@ -117,10 +117,11 @@ Seguimos sin solucionar el problema. Tenemos que hacer instalación manual.
 
 <center><img src="images/whalepenguingo.png" style="width: 300px;"/></center>
 
-### Mi Definición:
-*"Lo bueno de la máquina virtual sin lo malo de la máquina virtual, aprovechando
-toda la potencia de linux. Sólo se virtualiza lo que se necesita. Del resto se
-encarga el sistema anfitrión".*
+### ¿Qué es? (muy resumido):
+*"Lo bueno de la máquina virtual sin lo malo de la máquina virtual"*
+
+Aprovechando toda la potencia de linux sólo se virtualiza lo que se necesita. Del resto se
+encarga el sistema anfitrión.
 
 ## Docker vs. Máquina Virtual
 
@@ -164,7 +165,7 @@ otra.
 - **Sencillez**
 
 Su uso es relativamente sencillo. Basta conocer 5 ó 6 comandos y unas nociones
-muy básicas. Luego si queremos podemos profundizar.
+muy básicas. Luego si queremos podemos profundizar (y hay mucho jardín donde meterse).
 
 ## Ventajas
 
@@ -174,7 +175,7 @@ muy básicas. Luego si queremos podemos profundizar.
 - **Muy popular**
 
 Cada vez más usado, nos permite acceder a muchísima documentación o ayuda de 
-manera sencilla.
+manera sencilla. En parte se maneja como un repositorio distribuido tipo GIT.
 Además hay imágenes para casi todo lo que nos imaginemos.
 
 ## Conceptos básicos
@@ -209,9 +210,8 @@ https://hub.docker.com/
 - Registro
 - **Dockerfile**
 
-Es la *"receta"* para construir una imagen desde cero. Si conocéis Puppet o Chef 
-se trata de un concepto similar. Un archivo de texto con instrucciones paso a
-paso para construir una imagen.
+Es la *"receta"* para construir una imagen desde cero. 
+
 
 ## Arquitectura
 
@@ -221,11 +221,10 @@ paso para construir una imagen.
 
 Entre otras muchas cosas.
 
-Existen imagenes para levantar un contenedor linux que solo ocupa 5 MB (alpine),
-"todas"" las distribuciones Linux (Ubuntu , CentOS, Debian), 
-No Sql (Redis, MongoDB, Cassandra), Si Sql (Mysql, postgreSQL).....
+Existen imagenes para *casi* todo.
+"todas"" las distribuciones Linux (Ubuntu , CentOS, Debian), entornos de base de datos, tanto **No Sql** (Redis, MongoDB, Cassandra) como **Si Sql** (Mysql, postgreSQL), entornos de programación, servicios de todo tipo....
 
-Muchas de las imagenes son *"oficiales"* de los propios desarrolladores
+Recomendación: usar imágenes *"oficiales"*
 
 https://hub.docker.com/explore/
 
@@ -258,23 +257,27 @@ https://hub.docker.com/u/rocker/
 
 ## ¡Empieza el baile! (comandos básicos)
 
-Obtener una imagen
+Buscar/Obtener una imagen
 
 ```
+docker search rstudio
 docker pull rocker/rstudio
 
 ```
 Generar un contenedor a partir de la imagen
 
 ```
-docker run --rm -it -p 8787:8787 rocker/rstudio
+docker run --rm -p 8787:8787 --name="test" -v ~/dockerdata/:/data rocker/rstudio
 
 docker run -d -p 8787:8787 rocker/rstudio:3.2.0
 
 ```
+
 Conectar con Rocker
+
 ```
 localhost:8787 
+
 ```
 
 ## Login
@@ -302,6 +305,7 @@ docker run --rm -it p 8787:8787 -v /home/data:/data 6dc473697f85
 ## Más comandos útiles
 
 - docker images
+
 ```
 REPOSITORY           TAG         IMAGE ID            CREATED             SIZE
 rocker/shiny         latest      682eb5fda1f3        12 days ago         1.23 GB
@@ -318,25 +322,7 @@ d4w/nsenter          latest      9e4f13a0901e        8 months ago        83.8 kB
 
 ## Más comandos útiles
 
-- docker ps
-
-```
-CONTAINER ID IMAGE  COMMAND CREATED  STATUS  PORTS    NAMES
-fa049d375a71 ubuntu "/init" 7 s. ago Up 5 s. 3838/tcp, 0.0.0.0:8787->8787/tcp  \
-pensive_meninsky
-```
-
-- docker ps -a  
-
-(nos muestra también los contenedores parados)
-
-- docker -name
-```
-docker run -d -p 8787:8787 -name rockandroll -v /home/data:/data 6dc473697f8
-```
-
-## Más comandos útiles
-
+- docker ps [-a]
 - docker images         (lista las imagenes)
 - docker build          (construye un contenedor con un Dockerfile)
 - docker rmi nombre/id  (borra la imagen)
@@ -344,7 +330,6 @@ docker run -d -p 8787:8787 -name rockandroll -v /home/data:/data 6dc473697f8
 - docker rm nombre/id   (borra el contenedor)
 - docker system prune   (limpia el sistema)
 - docker commit         (guarda los cambios del contenedor)
-- dorcker start         (iniciar nuestro contenedor)
 
 **¡Cuidado!**
 
@@ -352,9 +337,8 @@ Si no se guardan los cambios el contenedor vuelve al estado inicial. Pero...
 
 ## es mejor usar el Dockerfile
 
-Es el mejor método para guardar los cambios de nuestro contenedor y compartirlo.
-
 ```
+----------------------
 FROM rocker/rstudio:latest
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
@@ -369,20 +353,15 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	
 RUN Rscript -e 'devtools::install_github("smach/rmiscutils")' 
 RUN rm -rf /tmp/downloaded_packages/
-
+---------------------
 ```
-
-## Con la canción empezada
-
-¿qué ocurre si queremos compartir nuestro entorno sin tener que componer un Dockerfile desde cero?
+docker build .
 
 ## Con la canción empezada
 
 http://o2r.info/2017/05/30/containerit-package/
 
 Podemos generar un Dockerfile con nuestras sesiones de trabajo.
-
-## Con la canción empezada
 
 ```
 devtools::install_github("r-hub/sysreqs")
@@ -417,24 +396,24 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
 
 ## Recomendaciones para el Dockerfile
 
-- **Limitar en la medida de lo posible las capas**.
+- **Limitar el numero de capas**.
 
 
 ## Recomendaciones para el Dockerfile
 
-- Limitar en la medida de lo posible las capas.
-- **Contenedores para solamente una función**.
+- Limitar el numero de capas.
+- **1 Contenedor, 1 función**.
 
 ## Recomendaciones para el Dockerfile
 
-- Limitar en la medida de lo posible las capas.
-- Contenedores con solamente una función.
+- Limitar el numero de capas.
+- 1 Contenedor, 1 función.
 - **No incluir datos. Los datos "viven" fuera de los contenedores**.
 
 ## Recomendaciones para el Dockerfile
 
-- Limitar en la medida de lo posible las capas.
-- Contenedores con solamente una función.
+- Limitar el numero de capas.
+- 1 Contenedor, 1 función.
 - No incluir datos. Los datos "viven" fuera de los contenedores.
 - **Aunque hay contenedores de datos**.
 
@@ -466,7 +445,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; apt-get -y update \
 
 ## Por ejemplo:
 
-**liftr**: paquete R que permite levantar un contenedor con el entorno definido para un reporting automatizado
+**liftr**: paquete R que permite levantar un contenedor con el entorno definido para un reporting automatizado (2017-09-29)
 
 https://liftr.me/
 
@@ -486,19 +465,17 @@ https://liftr.me/
 
 ## Cosas (un poco) avanzadas: Rock con Orquesta
 
-- Machine:  Despliegue rápido de motores de Docker en cloud/local.
+- *Machine*:  Despliegue rápido de motores de Docker en cloud/local.
 
-- Swarm:    clusters de contenedores. Varios motores docker como uno solo.
+- *Swarm*:    clusters de contenedores. Varios motores docker como uno solo.
 
-- Compose:  aplicaciones multicontenedor.
+- *Compose*:  aplicaciones multicontenedor.
 
-- Kubernetes: Orquestación
+- *Kubernetes*: Orquestación
 
-- CoreOS: Sistema operativo dedicado para aplicaciones basadas en contenedores
+- *CoreOS*: Sistema operativo dedicado para aplicaciones basadas en contenedores
 
 ## Enlaces
-
-https://www.docker.com/
 
 https://github.com/veggiemonk/awesome-docker
 
@@ -512,8 +489,12 @@ http://seankross.com/2017/09/17/Enough-Docker-to-be-Dangerous.html
 
 https://github.com/PRL-PRG/docker-r-full-base
 
+https://travis-ci.org/
 
-## Más Enlaces
+https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/
+
+
+## Algunas imágenes interesantes
 
 appsecco/data-science-toolbox
 
@@ -525,18 +506,24 @@ kaggle/python
 
 /r/rocker/ropensci/
 
-https://travis-ci.org/
-
 Jupyter:  https://www.dataquest.io/blog/docker-data-science/
 
-https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/
 
-## Resumiendo
+## Notas finales
 
-1. Muy útil para el desarrollo. Ahorra mucho tiempo en configuraciones.
-2. Compartir fácilmente. Desplegar desde cualquier lugar con los registros y los Dockerfiles.
-3. Desarrollo desde cualquier plataforma origen para cualquier plataforma destino.
-4. NUNCA aplicaciones críticas en producción. (de momento)
+1. **Rapidez y utilidad**. 
+
+Muy útil para el desarrollo. Ahorra mucho tiempo en configuraciones. Con una pequeña inversión inicial de tiempo los beneficios son tangibles.
+
+2. **Compartir**. 
+
+Desplegar desde cualquier lugar con los registros y los Dockerfiles. Repositorio común de configuraciones para diferentes funcionalidades.
+
+3. **Multiplataforma**. 
+
+Desarrollo desde cualquier plataforma origen para cualquier plataforma destino. 
+
+4. **NUNCA** aplicaciones críticas en producción. (de momento)
 
 ## Gracias!
 
