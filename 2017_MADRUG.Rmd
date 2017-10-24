@@ -56,7 +56,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - "No recuerdo cómo instalé aquella librería que necesito para este paquete."
 - "Es que en windows es muy complicado (o no funciona)."
 - "¿Pasarlo a producción?. Claro. Muy fácil...(caveats)"
-- "Feliz con PC nuevo: una semana hasta que todo queda igual que antes (o no)."
+- "PC nuevo? Estupendo!"
 - "Entornos compartidos."
 - **Desarrollo en otra plataforma.**
 
