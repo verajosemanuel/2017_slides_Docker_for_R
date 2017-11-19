@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## About me
 
-Data Scientist working on Financial Services for distressed asset management.
+Data Scientist working on Financial Services for distressed asset management. Giving support to data driven decisions to any area, mainly on forecasting, data viz and Human Resources.
 
 R Enthusiast.
 
