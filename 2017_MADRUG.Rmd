@@ -103,6 +103,8 @@ Algunos paquetes o el mismo Rstudio intentan paliar el problema o alguna de sus 
 
 - **mran Time machine**
 
+- **switchr**
+
 Seguimos sin solucionar el problema. Son soluciones a posteriori.
 
 ## ¿Qué es Docker?
